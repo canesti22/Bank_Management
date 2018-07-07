@@ -2,7 +2,14 @@
 #include<stdlib.h>
 #include<windows.h>
 
+int i,j;
+int main_exit;
 void menu();
+
+struct date
+{
+    int month,day,year;
+};
 
 struct
 {
@@ -122,6 +129,29 @@ void close(void)
 {
     printf("\n\n\n\nThis C Project is developed by Bochoris and Anesti!");
 }
+
+
+void see(void)
+{
+    FILE *ptr;
+    int test=0,rate;
+    int choice;
+    float time;
+    float intrst;
+    ptr=fopen("record.dat","r");
+    printf("Do you want to check by\n1.Account no\n2.Name\nEnter your choice:");
+    scanf("%d",&choice);
+    if (choice==1)
+    {
+        printf("Enter the account number:");
+        scanf("%d",&check.acc_no);
+        while (fscanf(ptr,"%d %s %d/%d/%d %d %s %s %lf %s %f %d/%d/%d",&add.acc_no,add.name,&add.dob.month,&add.dob.day,&add.dob.year,&add.age,add.address,add.citizenship,&add.phone,add.acc_type,&add.amt,&add.deposit.month,&add.deposit.day,&add.deposit.year)!=EOF)
+        {
+            if(add.acc_no==check.acc_no)
+            {
+                system("cls");
+                test=1;
+                printf("\nAccount NO.:%d\nName:%s \nDOB:%d/%d/%d \nAge:%d \nAddress:%s \nCitizenship No:%s \nPhone number:%.0lf \nType Of Account:%s \nAmount deposited:$ %.2f \nDate Of Deposit:%d/%d/%d\n\n",add.acc_no,add.name,add.dob.month,add.dob.day,add.dob.year,add.age,add.address,add.citizenship,add.phone,add.acc_type,add.amt,add.deposit.month,add.deposit.day,add.deposit.year);
 
 void erase(void)
 {
